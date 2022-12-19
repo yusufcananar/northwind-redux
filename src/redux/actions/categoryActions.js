@@ -12,7 +12,7 @@ export function getCategories() {
   return function (dispatch) {
     let url = "http://localhost:3000/categories";
     return fetch(url)
-      .then((response) => response.json()).then((response) => console.log(response))
-      // .then((response) => dispatch(getCategoriesSuccess(response)));
+      .then((response) => response.json())
+      .then((response) => dispatch(getCategoriesSuccess(response)));
   };
 }

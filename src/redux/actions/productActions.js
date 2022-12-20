@@ -12,6 +12,7 @@ export function getProducts(categoryId) {
     }
     return fetch(url)
       .then((response) => response.json())
+      .then((response) => response.filter(product => product.unitsInStock > 0)) //Condition if stocks are 0 or less
       .then((response) => dispatch(getProductsSuccess(response)));
-  };
+  }; 
 }

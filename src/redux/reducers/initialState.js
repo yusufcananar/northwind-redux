@@ -1,5 +1,5 @@
 export default {
-    currentCategory:{categoryName:"Games"},
+    currentCategory:{categoryName:""},
     categories : [],
     products : [],
     cart : []

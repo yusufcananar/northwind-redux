@@ -15,6 +15,7 @@ import {
 } from "reactstrap";
 
 import logo from "../../vader.png";
+import CartSummary from "../cart/CartSummary";
 
 function Navi(args) {
   const textStyle = { color: "green", textDecoration: "none" };
@@ -48,18 +49,7 @@ function Navi(args) {
               GitHub
             </NavLink>
           </NavItem>
-
-          <UncontrolledDropdown nav inNavbar>
-            <DropdownToggle nav caret style={textStyle}>
-              Options
-            </DropdownToggle>
-            <DropdownMenu end>
-              <DropdownItem>Option 1</DropdownItem>
-              <DropdownItem>Option 2</DropdownItem>
-              <DropdownItem divider />
-              <DropdownItem>Reset</DropdownItem>
-            </DropdownMenu>
-          </UncontrolledDropdown>
+          <CartSummary />
         </Nav>
       </Navbar>
     </div>

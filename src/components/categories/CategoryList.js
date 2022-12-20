@@ -8,6 +8,7 @@ import {
 } from "reactstrap";
 import { bindActionCreators } from "redux";
 import * as categoryActions from "../../redux/actions/categoryActions";
+import * as productActions from "../../redux/actions/productActions";
 
 class CategoryList extends Component {
   componentDidMount() {
@@ -16,19 +17,22 @@ class CategoryList extends Component {
 
   selectCategory = (category) => {
     this.props.actions.changeCategory(category);
+    this.props.actions.getProducts(category.id);
   };
 
   render() {
     return (
       <div>
-        <h2><Badge color="success">Categories</Badge></h2>
-        
+        <h3>
+          <Badge color="success">Categories</Badge>
+        </h3>
+
         <ListGroup>
           {this.props.categories.map((category) => (
             <ListGroupItem
               active={category.id === this.props.currentCategory.id}
               onClick={() => this.selectCategory(category)}
-              color="success"
+              color="dark"
               key={category.id}
             >
               {category.categoryName}
@@ -58,6 +62,7 @@ function mapDispatchToProps(dispatch) {
         categoryActions.changeCategory,
         dispatch
       ),
+      getProducts: bindActionCreators(productActions.getProducts, dispatch),
     },
   };
 }

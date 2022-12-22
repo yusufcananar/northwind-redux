@@ -33,7 +33,7 @@ function AddOrUpdateProduct({
   function handleSave(event) {
     event.preventDefault();
     saveProduct(product).then(() => {
-      history.pushState("/");
+      history.push("/");
     });
   }
 
@@ -48,7 +48,7 @@ function AddOrUpdateProduct({
 }
 
 export function getProductById(products, productId) {
-  let product = products.find((product) => product.id === productId) || null;
+  let product = products.find((product) => product.id == productId) || null;
   return product;
 }
 

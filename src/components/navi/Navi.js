@@ -9,8 +9,8 @@ function Navi(args) {
   return (
     <div>
       <Navbar color="dark" dark expand={false} {...args}>
-        <NavbarBrand>
-          <Link to={"/"}>
+
+          <Link className="navbar-brand" to={"/"}>
             <img
               src={logo}
               className="rounded"
@@ -19,12 +19,10 @@ function Navi(args) {
               alt="logo"
             />
           </Link>
-        </NavbarBrand>
+
         <Nav>
           <NavItem>
-            <NavLink>
-              <Link to="/saveproduct">Add Product</Link>
-            </NavLink>
+              <Link className="nav-link" to="/saveproduct">Add Product</Link>
           </NavItem>
           <CartSummary />
         </Nav>
